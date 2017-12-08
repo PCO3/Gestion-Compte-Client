@@ -52,6 +52,16 @@ class Connexion_Client_Modele extends CI_Model
 	}
 
 	public function deleteUser($pseudo)
+		
+	public function insertClient($pseudo, $Password, $email) //insérer client
+	{
+		$this->db->set('NomClient', $pseudo);
+		$this->db->set('Password', $Password);
+		$this->db->set('email', $email);
+		$this->db->insert($this->'clientzodiac');
+		$message='Client inséré';
+		return $message;
+	}
 }
 
 ?>
