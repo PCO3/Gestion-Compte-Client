@@ -67,7 +67,7 @@ class Connexion_Client_Modele extends CI_Model
 		$this->db->where('NomClient',$pseudo);
 		$this->db->delete('clientzodiac');
 		$message='Client deleté';
-		Return $message;
+		return $message;
 	}
 }
 
