@@ -62,6 +62,13 @@ class Connexion_Client_Modele extends CI_Model
 		$message='Client inséré';
 		return $message;
 	}
+	public function deletClient($pseudo)
+	{
+		$this->db->where('NomClient',$pseudo);
+		$this->db->delete('clientzodiac');
+		$message='Client deleté';
+		Return $message;
+	}
 }
 
 ?>
