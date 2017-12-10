@@ -17,10 +17,9 @@ class GestionClient extends CI_Controller
 	{
 		$this->load->library('form_validation');
 		$this -> load -> model('connexion_Client_Modele');
-		$this -> load -> view('FormulaireGestion');
-		
-		
-		}
+		$liste = $this-> connexion_Client_Modele-> affichageclients();
+		$this-> load-> view('FormulaireGestion', array('clients' => $liste));
+	}
 }
 
 ?>
