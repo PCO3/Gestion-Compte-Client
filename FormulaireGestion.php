@@ -1,4 +1,3 @@
-
 <!Doctype>
 <html>
 
@@ -10,7 +9,7 @@
 
 	<body> 
 
-		<!-- il fatu afficher troi boutons ajouter, modifier, supprimer -->
+		<!-- il faut afficher trois boutons ajouter, modifier, supprimer -->
 
 		<!---bouton Ajouter-->
 		<input type="button" value="ajouter un client">
@@ -19,24 +18,51 @@
 		</br>
 		</br>
 		
-		<TABLE BORDER="1"> 
+			
+		<table BORDER="1">
+		<CAPTION> Comptes Client </CAPTION> 
+    <tr>
+        <th> Identifiant </th>
+        <th> Nom du client </th>
+        <th> Mot de passe </th>
+        <th> Email </th>
+	<th> Modifier </th>
+	<th> Supprimer </th>
+    </tr>
+     
+ 
+    <?php
+      
 
-			<CAPTION> Comptes Client </CAPTION> 
-			<TR> 
-				<TH> Titre A1 </TH> 
-				<TH> Titre A2 </TH> 
-				<TH> Titre A3 </TH> 
-				<TH> Titre A4 </TH> 
-			</TR> 
-			<TR> 
-				<TH> Titre B1 </TH> 
-				<TD> Valeur B2 </TD> 
-				<TD> Valeur B3 </TD> 
-				<TD> Valeur B4 </TD> 
-			</TR> 
-		</TABLE> 
+			
+		foreach ($clients->result() as $info){
+			echo "<tr>";
+				echo "<td>";
+				echo $info->identifiant;
+				echo "</td>";
+				echo "<td>";
+				echo $info->NomClient;
+				echo "</td>";
+				echo "<td>";
+				echo $info->Password;
+				echo "</td>";
+				echo "<td>";
+				echo $info->email;
+				echo "</td>";
+				
+				
+			
+			echo "</tr>";
+		}
+ 
+        
+		?>
+ 
+</table>
 
 	</body>
 
 </html>
+
+
 
