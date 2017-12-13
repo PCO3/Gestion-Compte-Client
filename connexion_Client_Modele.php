@@ -51,17 +51,32 @@ class Connexion_Client_Modele extends CI_Model
 		return 'Mot de passe changé avec succès';
 	}
 
-	public function deleteUser($pseudo)
+	//public function deleteUser($pseudo)
 		
 	public function insertClient($pseudo, $Password, $email) //insérer client
 	{
 		$this->db->set('NomClient', $pseudo);
 		$this->db->set('Password', $Password);
 		$this->db->set('email', $email);
-		$this->db->insert($this->'clientzodiac');
+		$this->db->insert($this->clientzodiac);
 		$message='Client inséré';
 		return $message;
 	}
+	public function deletClient($pseudo)
+	{
+		$this->db->where('NomClient',$pseudo);
+		$this->db->delete('clientzodiac');
+		$message='Client supprimé';
+		return $message;
+	}
+	
+	public function affichageclients() //afficher les clients
+	{
+		return $liste = $this->db->get('clientzodiac');
+
+	}
 }
+
+
 
 ?>
