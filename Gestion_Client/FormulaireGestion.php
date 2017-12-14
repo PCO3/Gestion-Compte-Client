@@ -50,7 +50,29 @@
 						echo "</td>";
 						echo "<td>";
 						echo $info->email;
-						echo "</td>";			
+						echo "</td>"; ?> <!--Interruption du php-->
+
+						<!--- Les boutons Modifier -->
+
+						<td>
+							<form action="modifierClient" method="post">
+
+								<input type="submit" value="modifier un client" name="Modifier">
+
+							</form>	
+						</td>
+
+						<!--- Les boutons Supprimer -->
+
+						<td>
+							<form action="supprimerClient" method="post">
+
+								<input type="submit" value="supprimer un client" name="Supprimer">
+
+							</form>	
+						</td>
+
+						<?php	
 					
 						echo "</tr>";
 				}
