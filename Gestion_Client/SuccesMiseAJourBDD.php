@@ -9,7 +9,7 @@
 
         <h1> Mise à jour réussie </h1>
        
-        <form action="Gestion_Client/gestionClient" method="post">
+        <form action="gestionClient" method="post">
 
             <input type="submit" value="Retour à la liste client" name="Retour">
 
