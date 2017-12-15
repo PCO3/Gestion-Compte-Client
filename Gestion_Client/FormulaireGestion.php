@@ -50,31 +50,16 @@
 						echo "</td>";
 						echo "<td>";
 						echo $info->email;
-						echo "</td>"; ?> <!--Interruption du php-->
-
-						<!--- Les boutons Modifier -->
-
+						echo "</td>"; ?> //arrêt du php
+						
+						//bouton modifier
 						<td>
-							<form action="modifierClient" method="post">
-
-								<input type="submit" value="modifier un client" name="Modifier">
-
-							</form>	
+							<a href='gestionClientBDD?role=modifier&id=<?php echo $info->identifiant?>'>Modifier</a>
 						</td>
-
-						<!--- Les boutons Supprimer -->
-
+						//bouton supprimer
 						<td>
-							<form action="supprimerClient" method="post">
-
-								<input type="submit" value="supprimer un client" name="Supprimer">
-
-							</form>	
-						</td>
-
-						<?php	
-					
-						echo "</tr>";
+					</tr>	
+				<?php
 				}
 		 
 		        
