@@ -50,14 +50,19 @@
 						echo "</td>";
 						echo "<td>";
 						echo $info->email;
-						echo "</td>"; ?> //arrêt du php
+						echo "</td>"; ?> <!---arrêt du php
 						
-						//bouton modifier
+						//bouton modifier -->
 						<td>
 							<a href='gestionClientBDD?role=modifier&id=<?php echo $info->identifiant?>'>Modifier</a>
 						</td>
-						//bouton supprimer
+						<!---bouton supprimer -->
+			
 						<td>
+							<a href='gestionClientBDD?role=supprimer&id= <?php echo  $info->identifiant ?>'>Supprimer</a>
+						</td>	
+							
+							
 					</tr>	
 				<?php
 				}
