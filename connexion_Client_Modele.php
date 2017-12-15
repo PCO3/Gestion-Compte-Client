@@ -42,9 +42,9 @@ public function insertClient($pseudo, $Password, $email) //insérer client
 	}
 
 
-	public function deleteClient($pseudo)
+	public function deleteClient($id)
 	{
-		$this->db->where('NomClient',$pseudo);
+		$this->db->where('identifiant',$id);
 		$this->db->delete('clientzodiac');
 		$message='Client supprimé';
 		return $message;
