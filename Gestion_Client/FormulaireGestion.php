@@ -15,7 +15,7 @@
 		<!-- il faut afficher trois boutons ajouter, modifier, supprimer -->
 
 		<!---bouton Ajouter-->
-		<form action="Gestion_Client/ajouterClient" method="post">
+		<form action="ajouterClient" method="post">
 
 			<input type="submit" value="ajouter un client" name="Ajouter">
 
