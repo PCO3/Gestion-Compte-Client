@@ -7,71 +7,53 @@
 		<meta charset="utf-8" />
     	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/test.css">
 		<title> BDD Client </title>
-		<h1> Mise à jour de la base de données Client </h1>
 	</head>
 
 	<body> 
-
-		<!-- il faut afficher trois boutons ajouter, modifier, supprimer -->
-
-		<!---bouton Ajouter-->
-		<form action="ajouterClient" method="post">
-
-			<input type="submit" value="ajouter un client" name="Ajouter">
-
+		
+		<!--- Champs de recherche pour les noms clients -->
+		<form action = "" method = "post" align="center">
+         	<?php echo validation_errors(); ?>
+			<input type="search" placeholder="Entrez un mot-clé" name="RechercheClient" >
+			<?php echo form_error('recherche'); ?>
 		</form>
-	
-			
-		<table BORDER="1">
-			<CAPTION> Comptes Client </CAPTION> 
+		<br/>
+		<br/>
+
+
+		<table BORDER="1" align="center" cellpadding="5">
 
 		    <tr>
-		        <th> Identifiant </th>
+		        <th > Identifiant </th>
 		        <th> Nom du client </th>
-		        <th> Mot de passe </th>
 		        <th> Email </th>
-				<th> Modifier </th>
-				<th> Supprimer </th>
 		    </tr>
 	     
 	 
 		    <?php
-					
-				foreach ($clients->result() as $info){
+				foreach ($clients->result() as $info){ 
+
+
 					echo "<tr>";
 						echo "<td>";
 						echo $info->identifiant;
 						echo "</td>";
 						echo "<td>";
 						echo $info->NomClient;
-						echo "</td>";
-						echo "<td>";
-						echo $info->Password;
-						echo "</td>";
+						echo "</td>"; 
 						echo "<td>";
 						echo $info->email;
-						echo "</td>"; ?> <!---arrêt du php
-						
-						//bouton modifier -->
-						<td>
-							<a href='gestionClientBDD?role=modifier&id=<?php echo $info->identifiant?>'>Modifier</a>
-						</td>
-						<!---bouton supprimer -->
-			
-						<td>
-							<a href='gestionClientBDD?role=supprimer&id= <?php echo  $info->identifiant ?>'>Supprimer</a>
-						</td>	
-							
-							
-					</tr>	
+						echo "</td>";	?>
+
+					</tr>
+				
+					
 				<?php
-				}
-		 
-		        
-				?>
+				}?>	
  
 		</table>
 
+		<p><a href="gestionClient"> Revenir à la liste client </a></p>
 
 	</body>
 
